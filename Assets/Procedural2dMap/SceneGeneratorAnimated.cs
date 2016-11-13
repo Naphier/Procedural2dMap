@@ -42,7 +42,7 @@ public class SceneGeneratorAnimated : MonoBehaviour
 				counter++;
 			}
 
-			areaDatas[i] = new AreaData(AreaData.GetTransitionList(transitions), transitions, 0, 0);
+			areaDatas[i] = new AreaData(AreaData.GetTransitionList(transitions), transitions);
 		}
 	}
 
@@ -55,7 +55,7 @@ public class SceneGeneratorAnimated : MonoBehaviour
 		AreaData randomArea = areaDatas[randomAreaIndex];
 
 		// Create a copy of the AreaData.
-		AreaData newArea = new AreaData(randomArea.name, randomArea.availableTransitions, 0, 0);
+		AreaData newArea = new AreaData(randomArea.name, randomArea.availableTransitions);
 
 		for (int i = 0; i < iterations; i++)
 		{
@@ -187,8 +187,7 @@ public class SceneGeneratorAnimated : MonoBehaviour
 			if (isTransitionAvailable)
 				return new AreaData(
 					areaDatas[areaDatasIndex].name,
-					areaDatas[areaDatasIndex].availableTransitions,
-					0, 0);
+					areaDatas[areaDatasIndex].availableTransitions);
 
 			areaDatasIndex++;
 			if (areaDatasIndex == areaDatas.Length)

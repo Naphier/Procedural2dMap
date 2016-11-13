@@ -61,6 +61,12 @@ namespace NG
 			if (transitions == null)
 				transitions = new Dictionary<Direction, KeyValuePair<AreaData, Direction>>();
 
+			for (int i = 0; i < availableTransitions.Length; i++)
+			{
+				if (availableTransitions[i] == thisAreasTransition)
+					availableTransitions[i] = Direction.None;
+			}
+
 			if (!transitions.ContainsKey(thisAreasTransition))
 			{
 				transitions.Add(

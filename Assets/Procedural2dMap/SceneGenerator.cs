@@ -209,6 +209,7 @@ namespace NG
 			for (int i = 0; i < generatedAreas.Count; i++)
 			{
 				GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+				// Attach an Area component so we can easily inspect the AreaData in the editor.
 				Area area = cube.AddComponent<Area>();
 				generatedAreas[i].name = i + " - " + generatedAreas[i].name;
 				area.areaData = generatedAreas[i];
